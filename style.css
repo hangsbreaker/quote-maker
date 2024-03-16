@@ -1,0 +1,353 @@
+[data-theme="light"] {
+    --color-theme: #007070;
+    --color-background: #addddd;
+    --color-bgsecondary: #ffffff;
+    --color-content: #ffffff;
+    --color-secondary: #502b1e;
+    --color-bgstar: #ffffff;
+    --color-textstar: #000000;
+    --color-even-ayah: #ffffff;
+    --color-odd-ayah: #f2f2f2;
+    --color-title-text: #007070;
+    --color-separator: #eeeeee;
+    --color-arabic: #000000;
+    --color-text: #000000;
+    --color-mint: #82CFD0;
+    --color-shadow-rgb: 119, 119, 119;
+}
+
+[data-theme="dark"] {
+    --color-theme: #1f2125;
+    --color-background: #343a40;
+    --color-bgsecondary: #1f2125;
+    --color-content: #1f2125;
+    --color-secondary: #777777;
+    --color-bgstar: #343a40;
+    --color-textstar: #ffffff;
+    --color-even-ayah: #1f2125;
+    --color-odd-ayah: #252a2e;
+    --color-title-text: #2ca4ab;
+    --color-separator: #464b50;
+    --color-arabic: #ffffff;
+    --color-text: #ffffff;
+    --color-mint: #82CFD0;
+    --color-shadow-rgb: 0, 0, 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    touch-action: none;
+    font-family: Arial;
+    font-size: 14px;
+    background: var(--color-background);
+}
+
+
+#wrap,
+#bgimage {
+    overflow: hidden;
+    width: 100%;
+    height: 500px;
+    background: #f0f8ff;
+}
+
+#control {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 264px;
+    border-top: 1px solid #ddd;
+    background: var(--color-odd-ayah);
+}
+
+.box {
+    position: absolute;
+    user-select: none;
+    border: 1px dashed #000;
+    transform: translate(-50%, -50%);
+    overflow: visible;
+}
+
+.box-wrapper {
+    position: relative;
+    transform-origin: top left;
+    user-select: none;
+    overflow: visible;
+}
+
+/* .box:hover>.dot {
+    display: block;
+} */
+
+.dot {
+    height: 10px;
+    width: 10px;
+    background-color: #1E88E5;
+    position: absolute;
+    border-radius: 100px;
+    border: 1px solid white;
+    user-select: none;
+}
+
+.dot:hover {
+    background-color: #0D47A1;
+}
+
+.dot.left-top {
+    top: -5px;
+    left: -5px;
+    /* cursor: nw-resize; */
+}
+
+.dot.left-bottom {
+    bottom: -5px;
+    left: -5px;
+    /* cursor: sw-resize; */
+}
+
+.dot.right-top {
+    top: -5px;
+    right: -5px;
+    /* cursor: ne-resize; */
+}
+
+.dot.right-bottom {
+    bottom: -5px;
+    right: -5px;
+    /* cursor: se-resize; */
+}
+
+.dot.top-mid {
+    top: -5px;
+    left: calc(50% - 5px);
+    /* cursor: n-resize; */
+}
+
+.dot.left-mid {
+    left: -5px;
+    top: calc(50% - 5px);
+    /* cursor: w-resize; */
+}
+
+.dot.right-mid {
+    right: -5px;
+    top: calc(50% - 5px);
+    /* cursor: e-resize; */
+}
+
+.dot.bottom-mid {
+    bottom: -5px;
+    left: calc(50% - 5px);
+    /* cursor: s-resize; */
+}
+
+.dot.rotate {
+    top: -30px;
+    left: calc(50% - 5px);
+}
+
+.rotate-link {
+    position: absolute;
+    width: 1px;
+    height: 15px;
+    background-color: #1E88E5;
+    top: -20px;
+    left: calc(50% + 0.5px);
+    z-index: -1;
+}
+
+/* =========================================================== */
+
+.titlestyle {
+    color: var(--color-title-text);
+    font-size: 16px;
+}
+
+.subttl {
+    color: var(--color-text);
+    padding-left: 10px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* -webkit-appearance: none;
+    margin: 0; */
+    margin-left: 10px;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+#tsize {
+    outline: none;
+    border: none;
+    background: none;
+    text-align: right;
+    color: var(--color-text);
+}
+
+.colorpick {
+    outline: none;
+    border: none;
+    background: none;
+}
+
+.btnst {
+    border: none;
+    padding: 4px 10px;
+    border-radius: 5px;
+    margin-left: 3px;
+    background: var(--color-title-text);
+    color: #ffffff;
+    font-weight: bold;
+}
+
+#caption {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin-top: 0px;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 7px;
+    overflow: visible;
+}
+
+.ic-align {
+    position: relative;
+    display: block;
+    height: 3px;
+    top: -6px;
+    border-radius: 3px;
+    background: #fff;
+}
+
+.align-left {
+    width: 16px;
+}
+
+.align-left::after,
+.align-left::before {
+    content: "";
+    position: absolute;
+    left: 0px;
+    background: #ffffff;
+    height: 3px;
+    border-radius: 3px;
+}
+
+.align-left::before {
+    top: 6px;
+    width: 12px;
+}
+
+.align-left::after {
+    top: 12px;
+    width: 8px;
+}
+
+.align-center {
+    width: 12px;
+    text-align: center;
+}
+
+.align-center::after,
+.align-center::before {
+    content: "";
+    position: absolute;
+    background: #ffffff;
+    height: 3px;
+    border-radius: 3px;
+}
+
+.align-center::before {
+    top: 6px;
+    width: 16px;
+    left: -2px;
+}
+
+.align-center::after {
+    top: 12px;
+    left: 2px;
+    width: 8px;
+}
+
+.align-right {
+    width: 16px;
+}
+
+.align-right::after,
+.align-right::before {
+    content: "";
+    position: absolute;
+    right: 0px;
+    background: #ffffff;
+    height: 3px;
+    border-radius: 3px;
+}
+
+.align-right::before {
+    top: 6px;
+    width: 12px;
+}
+
+.align-right::after {
+    top: 12px;
+    width: 8px;
+}
+
+#rehl {
+    position: relative;
+    top: -3px;
+    border: none;
+    color: #ffffff;
+    background: var(--color-title-text);
+    padding: 1px 8px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+#slcimg {
+    position: relative;
+    top: -8px;
+    display: inline-block;
+    background: var(--color-title-text);
+    width: 37px;
+    height: 25px;
+    border-radius: 5px;
+}
+
+#slcimg::before {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 4px;
+    width: 0;
+    height: 0;
+    border-left: 9px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 16px solid rgb(255, 255, 255);
+}
+
+#slcimg::after {
+    content: "";
+    position: absolute;
+    left: 14px;
+    top: 6px;
+    width: 0;
+    height: 0;
+    border-left: 9px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 14px solid rgb(255, 255, 255);
+}

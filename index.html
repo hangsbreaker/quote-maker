@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="style.css" type="text/css" rel="stylesheet">
+</head>
+
+<body data-theme="light">
+    <div id="wrap">
+
+        <div class="box-wrapper" id="box-wrapper" onclick="showboxder()">
+            <div class="box" id="box">
+                <div class="dot rotate" id="rotate"></div>
+                <div class="dot left-top" id="left-top"></div>
+                <div class="dot left-bottom" id="left-bottom"></div>
+                <div class="dot top-mid" id="top-mid"></div>
+                <div class="dot bottom-mid" id="bottom-mid"></div>
+                <div class="dot left-mid" id="left-mid"></div>
+                <div class="dot right-mid" id="right-mid"></div>
+                <div class="dot right-bottom" id="right-bottom"></div>
+                <div class="dot right-top" id="right-top"></div>
+                <div class="rotate-link"></div>
+                <span id="caption" contenteditable="true">Hello World</span>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="previewImage" style="display:none;"></div>
+
+    <div id="control" onclick="hideboxder()">
+        <div style="padding-top:7px;padding-left:15px;padding-right:15px;">
+            <table width="100%" cellpadding="6" cellspacing="6">
+                <tr>
+                    <td colspan="2"><label class="titlestyle"><b>Text</b></label></td>
+                </tr>
+                <tr>
+                    <td class="subttl">Size</td>
+                    <td align="right"><input type="number" id="tsize" value="20" onkeyup="setSize()"
+                            onchange="setSize()" /></td>
+                </tr>
+                <tr>
+                    <td class="subttl">Color</td>
+                    <td align="right"><input type="color" id="tcolor" class="colorpick" onchange="setColor()" /></td>
+                </tr>
+                <tr>
+                    <td class="subttl">Highlight</td>
+                    <td align="right">
+                        <button type="button" id="rehl" onclick="removeHL()">&times;</button>
+                        <input type="color" id="hcolor" class="colorpick" onchange="setHColor()" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="subttl">Style</td>
+                    <td align="right">
+                        <button type="button" class="btnst" onclick="setStyle('n')">N</button>
+                        <button type="button" class="btnst" onclick="setStyle('b')">B</button>
+                        <button type="button" class="btnst" onclick="setStyle('i')"><i>I</i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="subttl">Aligment</td>
+                    <td align="right">
+                        <button type="button" class="btnst" onclick="setAlign('L')" style="height:26px;">
+                            <span class="ic-align align-left"></span>
+                        </button>
+                        <button type="button" class="btnst" onclick="setAlign('C')" style="height:26px;">
+                            <span class="ic-align align-center"></span>
+                        </button>
+                        <button type="button" class="btnst" onclick="setAlign('R')" style="height:26px;">
+                            <span class="ic-align align-right"></span>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Background</td>
+                    <td align="right">
+                        <input type="color" id="bcolor" value="#f0f8ff" class="colorpick" onchange="setBgColor()" />
+                        <label id="slcimg">
+                            <input type="file" id="bgimage" accept="image/png,image/jpeg"
+                                onchange="checkfile('bgimage')" style="visibility:hidden;width:0px;">
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <label class="titlestyle">
+                            <b>
+                                <button type="button" id="downloadimg" class="btnst" style="text-decoration:none;"
+                                    onclick="generate()">Download</button>
+                                <a href="#" id="generatedownload" style="display:none;"></a>
+                            </b>
+                        </label>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="html2canvas.js"></script>
+</body>
+
+</html>
